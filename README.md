@@ -50,6 +50,10 @@ A simple weather application built with React that fetches weather data using th
 
 ![Weather App Screenshot](screenshot.png)
 
+## Demo
+
+You can view the deployed application [here](https://check-city-weather0.netlify.app/).
+
 ## Dependencies
 
 - React
