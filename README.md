@@ -13,7 +13,7 @@ A simple weather application built with React that fetches weather data using th
 1. Clone the repository:
     ```bash
     git clone https://github.com/JalinaH/weather-app.git
-    cd react-weather-app
+    cd weather-app
     ```
 
 2. Install dependencies:
