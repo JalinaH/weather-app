@@ -36,14 +36,16 @@ const Weather = () => {
       return;
     }
     try {
-      const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=05a05d1f5983344eccddef24fd104860`;
+      const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${
+        import.meta.env.VITE_APP_ID
+      }`;
 
       const response = await fetch(url);
       const data = await response.json();
 
-        if(!response.ok){
-            alert(data.message);
-        }
+      if (!response.ok) {
+        alert(data.message);
+      }
 
       console.log(data);
       const icon = allIcons[data.weather[0].icon] || clear_icon;
