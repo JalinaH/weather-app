@@ -34,7 +34,7 @@ A simple weather application built with React that fetches weather data using th
 ## Usage
 
 - Type the name of a city into the search bar and press enter or click the search icon to get the current weather.
-- By default, the app fetches weather data for the last city searched on load.
+- By default, the app fetches weather data for the Colombo on load.
 
 ## Project Structure
 
