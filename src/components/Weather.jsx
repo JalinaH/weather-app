@@ -31,6 +31,11 @@ const Weather = () => {
     "13n": snow_icon,
   };
 
+  const preloadImage = (url) => {
+    const img = new Image();
+    img.src = url;
+  };
+
   const search = async (city) => {
     if (city === "") {
       alert("Please enter a city name to search for the weather.");
@@ -64,6 +69,8 @@ const Weather = () => {
   };
 
   useEffect(() => {
+    preloadImage("./assets/cloud.png");
+
     search("Colombo");
   }, []);
 
