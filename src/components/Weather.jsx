@@ -70,6 +70,12 @@ const Weather = () => {
 
   useEffect(() => {
     preloadImage("/assets/cloud.png");
+    preloadImage('/assets/clear.png');
+    preloadImage('/assets/rain.png');
+    preloadImage('/assets/snow.png');
+    preloadImage('/assets/wind.png');
+    preloadImage('/assets/humidity.png');
+    preloadImage('/assets/drizzle.png');
 
     search("Colombo");
   }, []);
