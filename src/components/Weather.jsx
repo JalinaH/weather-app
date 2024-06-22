@@ -75,6 +75,7 @@ const Weather = () => {
           name="description"
           content="Check the current weather of any city."
         />
+        <link rel="preconnect" href="https://api.openweathermap.org" />
       </Helmet>
       <main className="weather">
         <header className="search-bar">
