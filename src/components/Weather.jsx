@@ -76,6 +76,7 @@ const Weather = () => {
     preloadImage('/assets/wind.png');
     preloadImage('/assets/humidity.png');
     preloadImage('/assets/drizzle.png');
+    preloadImage('/assets/search.png');
 
     search("Colombo");
   }, []);
