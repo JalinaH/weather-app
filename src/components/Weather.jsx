@@ -69,7 +69,7 @@ const Weather = () => {
   };
 
   useEffect(() => {
-    preloadImage("./assets/cloud.png");
+    preloadImage("/assets/cloud.png");
 
     search("Colombo");
   }, []);
