@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
+import { Helmet, HelmetProvider } from "react-helmet-async";
 import "./Weather.css";
 import search_icon from "../assets/search.png";
 import clear_icon from "../assets/clear.png";
@@ -67,42 +68,55 @@ const Weather = () => {
   }, []);
 
   return (
-    <div className="weather">
-      <div className="search-bar">
-        <input ref={inputRef} type="text" placeholder="Search" />
-        <img
-          src={search_icon}
-          alt=""
-          onClick={() => search(inputRef.current.value)}
+    <HelmetProvider>
+      <Helmet>
+        <title>Weather App</title>
+        <meta
+          name="description"
+          content="Check the current weather of any city."
         />
-      </div>
-      {weatherData ? (
-        <>
-          <img src={weatherData.icon} alt="" className="weather-icon" />
-          <p className="temperature">{weatherData.temperature}°C</p>
-          <p className="location">{weatherData.location}</p>
+      </Helmet>
+      <main className="weather">
+        <header className="search-bar">
+          <input ref={inputRef} type="text" placeholder="Search" />
+          <img
+            src={search_icon}
+            alt="Search"
+            onClick={() => search(inputRef.current.value)}
+          />
+        </header>
+        {weatherData ? (
+          <>
+            <img
+              src={weatherData.icon}
+              alt="Weather Icon"
+              className="weather-icon"
+            />
+            <p className="temperature">{weatherData.temperature}°C</p>
+            <p className="location">{weatherData.location}</p>
 
-          <div className="weather-data">
-            <div className="col">
-              <img src={humidity_icon} alt="" />
-              <div>
-                <p>{weatherData.humidity} %</p>
-                <span>Humidity</span>
+            <section className="weather-data">
+              <div className="col">
+                <img src={humidity_icon} alt="Humidity Icon" />
+                <div>
+                  <p>{weatherData.humidity} %</p>
+                  <span>Humidity</span>
+                </div>
               </div>
-            </div>
-            <div className="col">
-              <img src={wind_icon} alt="" />
-              <div>
-                <p>{weatherData.windSpeed} Km/h</p>
-                <span>Wind Speed</span>
+              <div className="col">
+                <img src={wind_icon} alt="Wind Speed Icon" />
+                <div>
+                  <p>{weatherData.windSpeed} Km/h</p>
+                  <span>Wind Speed</span>
+                </div>
               </div>
-            </div>
-          </div>
-        </>
-      ) : (
-        <></>
-      )}
-    </div>
+            </section>
+          </>
+        ) : (
+          <p>No weather data available</p>
+        )}
+      </main>
+    </HelmetProvider>
   );
 };
 
