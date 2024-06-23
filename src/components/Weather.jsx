@@ -69,14 +69,14 @@ const Weather = () => {
   };
 
   useEffect(() => {
-    preloadImage("/assets/cloud.png");
-    preloadImage("/assets/clear.png");
-    preloadImage("/assets/rain.png");
-    preloadImage("/assets/snow.png");
-    preloadImage("/assets/wind.png");
-    preloadImage("/assets/humidity.png");
-    preloadImage("/assets/drizzle.png");
-    preloadImage("/assets/search.png");
+    preloadImage(clear_icon);
+    preloadImage(cloud_icon);
+    preloadImage(rain_icon);
+    preloadImage(snow_icon);
+    preloadImage(wind_icon);
+    preloadImage(humidity_icon);
+    preloadImage(drizzle_icon);
+    preloadImage(search_icon);
 
     search("Colombo");
   }, []);
